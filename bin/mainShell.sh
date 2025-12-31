@@ -2,21 +2,32 @@
 
 USER_NAME=$(whoami)
 HOST_NAME=$(hostname)
+
+# color section
 PROMT_Color="\e[1;32m"
 RESET_Color="\e[0m"
+GREEN='\e[1;32m'
+BLUE='\e[1;34m'
+CYAN='\e[1;36m'
+YELLOW='\e[1;33m'
+RESET='\e[0m'
 
+# greet
 function Greetings_User() {
   clear
-  echo "================================================"
-  echo "==========-WELCOME-TO-211Shell(ShVer)-=========="
-  echo "=======---Type exit to end the program---======="
-  echo "================================================"
+  echo -e "${CYAN}================================================${RESET}"
+  echo -e "${CYAN}=========-WELCOME-TO-211Shell(ShVer)-==========${RESET}"
+  echo -e "${CYAN}=======---Type exit to end the program---=======${RESET}"
+  echo -e "${CYAN}================================================${RESET}"
 }
 
 Greetings_User
 
+# program---m
 while true; do
-  echo -ne "${PROMT_Color}${USER_NAME}@${HOST_NAME}${RESET_Color}$"
+  current_direct=$(basename "pwd")
+
+  echo -ne "${PROMT_Color}${USER_NAME}@${HOST_NAME}${current_direct}${RESET_Color}$ "
 
   read -r user_input
 

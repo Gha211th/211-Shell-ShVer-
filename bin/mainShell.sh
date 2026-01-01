@@ -15,19 +15,21 @@ RESET='\e[0m'
 # greet
 function Greetings_User() {
   clear
+  echo " "
   echo -e "${CYAN}================================================${RESET}"
   echo -e "${CYAN}=========-WELCOME-TO-211Shell(ShVer)-==========${RESET}"
   echo -e "${CYAN}=======---Type exit to end the program---=======${RESET}"
   echo -e "${CYAN}================================================${RESET}"
+  echo " "
 }
 
 Greetings_User
 
 # program---m
 while true; do
-  current_direct=$(basename "pwd")
+  current_direct=$(basename "")
 
-  echo -ne "${PROMT_Color}${USER_NAME}@${HOST_NAME}${current_direct}${RESET_Color}$ "
+  echo -ne "${RESET}${USER_NAME}@${CYAN}${HOST_NAME}${current_direct}${RESET_Color}$ "
 
   read -r user_input
 
